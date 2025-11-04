@@ -78,6 +78,47 @@ This project uses a **synthetic binary segmentation dataset** generated programm
 
 ---
 
+### 📈 Training Summary (20 Epochs)
+
+| Metric | Epoch 1 | Epoch 20 |
+|--------|---------|----------|
+| Training Loss | 1.5437 | 0.5038 |
+| Validation Loss | 1.5645 | 0.1832 |
+| Dice Coefficient (Train) | 0.1133 | 0.7226 |
+| Dice Coefficient (Val) | 0.0486 | 0.8344 |
+
+✅ Best model saved as: `unet_vehicle.h5`  
+
+---
+
+### 🔍 Raw Log (Condensed)
+
+Epoch 1/20  - loss: 1.5437 - dice: 0.1133 - val_dice: 0.0486  
+Epoch 10/20 - loss: 1.0492 - dice: 0.1487 - val_dice: 0.1297  
+Epoch 15/20 - loss: 0.7974 - dice: 0.3760 - val_dice: 0.4309  
+Epoch 20/20 - loss: 0.5038 - dice: 0.7226 - val_dice: 0.8344  
+
+✅ Training complete   
+
+--
+
+## ✅ Pros of U-Net
+- Works extremely well with limited training data (data-efficient).
+- Skip connections help preserve spatial details → sharper masks.
+- Symmetric encoder-decoder design enables multi-scale feature learning.
+- Lightweight and trainable on mid-range GPUs/CPUs.
+- Widely used and benchmark-proven in biomedical, satellite, and vehicle segmentation.
+- Easy to modify (attention U-Net, ResU-Net, U-Net++, etc.).
+
+## ❌ Cons of U-Net**
+- Struggles with very large high-resolution images due to memory usage.
+- No explicit handling of temporal or 3D context (not ideal for video or volumetric data unless extended).
+- May overfit if the dataset is too synthetic or lacks real-world variance.
+- Performance drops on extremely small or thin objects (boundaries may blur).
+- Vanilla U-Net does not model long-range dependencies (no self-attention like Transformers).
+
+--
+
 ## 🔍 How to Run
 
 ### 1️⃣ Train
