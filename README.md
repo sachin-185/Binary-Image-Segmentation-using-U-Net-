@@ -23,9 +23,6 @@ Includes: data loader, augmentation, Dice-based loss, and CLI support for **trai
 
 ## Methodology
 ### Model Architecture (Why U-Net?)
-
-A U-Net encoder–decoder architecture was selected because:
-
 - Designed specifically for **pixel-level segmentation** tasks.  
 - Uses **skip connections** to preserve spatial details lost during downsampling.  
 - Performs well even with **limited datasets**, especially when combined with augmentation.  
